@@ -1,4 +1,3 @@
-const gifs = require('./gifs.json');
 const express = require('express');
 const path = require('path'); // used to make absolute path to static folder
 
