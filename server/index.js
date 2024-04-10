@@ -5,6 +5,9 @@ const path = require('path'); // used to make absolute path to static folder
 // path.join() will construct an absolute path using the path components provided
 const pathToDistFolder = path.join(__dirname, '..', 'vite-project', 'dist');
 
+/* FEEDBACK: Your path to your dist folder is not quite right. Your dist folder is in a
+"web" directory, not a "vite-project" directory */
+
 const app = express();
 
 /////////////////////
@@ -26,10 +29,10 @@ const serveStatic = express.static(pathToDistFolder);
 
 // "Response" controllers send data to the client
 const serveData = (req, res) => {
-    // Example response data.
-    const data = { message: "This is some data from the API." };
-    res.json(data);
-  };
+  // Example response data.
+  const data = { message: "This is some data from the API." };
+  res.json(data);
+};
 const serveHello = (req, res, next) => {
   const name = req.query.name || "stranger";
   res.send(`hello ${name}`);
